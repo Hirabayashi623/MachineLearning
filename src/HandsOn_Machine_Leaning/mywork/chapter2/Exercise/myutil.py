@@ -100,7 +100,7 @@ class DataFactory():
         return data_label, data_other
 
     def getPreparedDataSet(self):
-        if self.data_prepared == None:
+        if self.data_prepared is None:
             # データのダウンロード
             downloadAfterCheck()
 
@@ -140,8 +140,11 @@ class DataFactory():
             self.data_prepared = pipeline_main.fit_transform(data_train)
 
             self.data_label = data_label
+
         else:
             None
-
         return self.data_prepared.copy(), self.data_label.copy()
+
+
+
 
